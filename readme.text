@@ -1,0 +1,19 @@
+In this approach to generating and ensuring the uniqueness of short URLs, the primary data structure used is a database (MongoDB), with additional mechanisms like Base62 encoding and random string generation.
+Purpose: The database acts as the central data structure to store and retrieve URL mappings. Each document in the database stores fields such as:
+=> longUrl: The original long URL.
+=> shortUrl: The generated short URL.
+=> urlCode: A unique 6-character code representing the short URL.
+=> date: Timestamp for when the URL was created.
+
+
+Apprroach taken to ensure uniqueness to generate fixed 6 length url code:
+
+1. Base62 Encoding:
+Base62 uses a set of 62 characters (A-Z, a-z, 0-9) to generate a compact, unique string representation of a timestamp. This ensures that generated codes are short and efficient.
+The timestamp is converted into Base62, providing a time-based uniqueness.
+
+2. Random String Padding:
+If the Base62 representation is less than 6 characters, random characters are added to ensure the code is exactly 6 characters long, making the short URLs uniformly sized.
+
+3. Uniqueness Check:
+After generating a URL code, the system checks the database to ensure the code doesn't already exist (to avoid collisions). If a duplicate is found, a new code is generated and checked again, ensuring that every code is unique.
