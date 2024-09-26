@@ -113,14 +113,3 @@ The service includes custom validation using a regular expression. This ensures 
 1. Enter a long URL in the form (or through the API), click "Shorten URL".
 2. The service returns a 6-character short URL.
 3. You can click or access the short URL to verify redirection to the original long URL.
-
-## Dependencies
-
-- **Node.js**: JavaScript runtime environment.
-- **Express.js**: Web framework for building the API and handling routing.
-- **MongoDB**: Database for storing URL mappings.
-- **Mongoose**: ODM library for MongoDB.
-- **valid-url**: For validating URL formats.
-- **Dotenv**: For environment variable management.
-- **Jest**: Testing framework.
-- **Supertest**: HTTP assertions and testing.
