@@ -31,7 +31,7 @@ A URL shortener service built using **Node.js**, **Express**, and **MongoDB**. I
 
    ```bash
    git clone https://github.com/ShahedMahamudLemon/UrlShortener
-   cd UrlShortner
+   cd UrlShortener
    ```
 
 2. **Install dependencies**:
